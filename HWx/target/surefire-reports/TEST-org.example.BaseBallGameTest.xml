@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.example.BaseBallGameTest" time="0.137" tests="31" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="18"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="MS950"/>
+    <property name="java.class.path" value="C:\Users\user\Desktop\Homeworkx\target\test-classes;C:\Users\user\Desktop\Homeworkx\target\classes;C:\Users\user\.m2\repository\org\apache\commons\commons-lang3\3.0\commons-lang3-3.0.jar;C:\Users\user\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.1\junit-jupiter-engine-5.9.1.jar;C:\Users\user\.m2\repository\org\junit\platform\junit-platform-engine\1.9.1\junit-platform-engine-1.9.1.jar;C:\Users\user\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\user\.m2\repository\org\junit\platform\junit-platform-commons\1.9.1\junit-platform-commons-1.9.1.jar;C:\Users\user\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.1\junit-jupiter-api-5.9.1.jar;C:\Users\user\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="GMT+08:00"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="18"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="TW"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-18\bin"/>
+    <property name="sun.java.command" value="C:\Users\user\AppData\Local\Temp\surefire11137087597842070004\surefirebooter-20231120170159577_3.jar C:\Users\user\AppData\Local\Temp\surefire11137087597842070004 2023-11-20T17-01-59_471-jvmRun1 surefire-20231120170159577_1tmp surefire_0-20231120170159577_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\user\Desktop\Homeworkx\target\test-classes;C:\Users\user\Desktop\Homeworkx\target\classes;C:\Users\user\.m2\repository\org\apache\commons\commons-lang3\3.0\commons-lang3-3.0.jar;C:\Users\user\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.1\junit-jupiter-engine-5.9.1.jar;C:\Users\user\.m2\repository\org\junit\platform\junit-platform-engine\1.9.1\junit-platform-engine-1.9.1.jar;C:\Users\user\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\user\.m2\repository\org\junit\platform\junit-platform-commons\1.9.1\junit-platform-commons-1.9.1.jar;C:\Users\user\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.1\junit-jupiter-api-5.9.1.jar;C:\Users\user\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\user"/>
+    <property name="user.language" value="zh"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2022-03-22"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-18"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\user\Desktop\Homeworkx"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\user\AppData\Local\Temp\surefire11137087597842070004\surefirebooter-20231120170159577_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="18+36-2087"/>
+    <property name="user.name" value="user"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\user\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\user\AppData\Local\Temp\"/>
+    <property name="idea.version" value="2023.2.3"/>
+    <property name="java.version" value="18"/>
+    <property name="user.dir" value="C:\Users\user\Desktop\Homeworkx"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="MS950"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-18\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\cygwin64\bin;C:\MinGW\bin;C:\Program Files\Java\jdk-18\bin;c:\altera\91\quartus\bin;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X64\;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X86\;C:\Program Files (x86)\Common Files\Pulse Secure\TNC Client Plugin\;C:\Program Files\dotnet\;C:\Users\user\Git\cmd;C:\Program Files\Git\cmd;D:\PuTTY\;C:\Users\user\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\user\AppData\Local\Programs\Python\Python310\;C:\Users\user\AppData\Local\Microsoft\WindowsApps;;C:\Users\user\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.2.3\bin;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="18+36-2087"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="62.0"/>
+  </properties>
+  <testcase name="check_score_error1" classname="org.example.BaseBallGameTest" time="0.048">
+    <system-out><![CDATA[Process in progress!...
+
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error2" classname="org.example.BaseBallGameTest" time="0.002">
+    <system-out><![CDATA[Process in progress!...
+
+局分不對:不可能有負數分數!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error3" classname="org.example.BaseBallGameTest" time="0.002">
+    <system-out><![CDATA[Process in progress!...
+
+局分不對:不可能有負數分數!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error4" classname="org.example.BaseBallGameTest" time="0.002">
+    <system-out><![CDATA[Process in progress!...
+
+成員分數不對:不可能有負數分的情況!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error5" classname="org.example.BaseBallGameTest" time="0.001">
+    <system-out><![CDATA[Process in progress!...
+
+成員分數不對:不可能有負數分的情況!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error6" classname="org.example.BaseBallGameTest" time="0.002">
+    <system-out><![CDATA[Process in progress!...
+
+局數不對:至少打9局!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error7" classname="org.example.BaseBallGameTest" time="0.002">
+    <system-out><![CDATA[Process in progress!...
+
+局數不對:至少打9局!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error8" classname="org.example.BaseBallGameTest" time="0.001">
+    <system-out><![CDATA[Process in progress!...
+
+前攻者人數不對:比賽成員只能有9個!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error9" classname="org.example.BaseBallGameTest" time="0.001">
+    <system-out><![CDATA[Process in progress!...
+
+後攻者人數不對:比賽成員只能有9個!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error10" classname="org.example.BaseBallGameTest" time="0.001">
+    <system-out><![CDATA[Process in progress!...
+
+前攻隊總分不一致!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error11" classname="org.example.BaseBallGameTest" time="0.002">
+    <system-out><![CDATA[Process in progress!...
+
+後攻隊總分不一致!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error12" classname="org.example.BaseBallGameTest" time="0.002">
+    <system-out><![CDATA[Process in progress!...
+
+局數不對:不是9局就是10局，兩邊局數要一樣!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error13" classname="org.example.BaseBallGameTest" time="0.002">
+    <system-out><![CDATA[Process in progress!...
+
+局數不對:不是9局就是10局，兩邊局數要一樣!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error14" classname="org.example.BaseBallGameTest" time="0.001">
+    <system-out><![CDATA[Process in progress!...
+
+局分不對:不可能有負數分數!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error15" classname="org.example.BaseBallGameTest" time="0.001">
+    <system-out><![CDATA[Process in progress!...
+
+局分不對:不可能有負數分數!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error16" classname="org.example.BaseBallGameTest" time="0.001">
+    <system-out><![CDATA[Process in progress!...
+
+局分不對:前攻者不可能有X的情況!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error17" classname="org.example.BaseBallGameTest" time="0.001">
+    <system-out><![CDATA[Process in progress!...
+
+總分不對:不可能有平手的情況!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error18" classname="org.example.BaseBallGameTest" time="0.001">
+    <system-out><![CDATA[Process in progress!...
+
+不合理的提前結束:不合理的提前結束後攻者只打到8下，不可能輸給前攻者!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error19" classname="org.example.BaseBallGameTest" time="0.001">
+    <system-out><![CDATA[Process in progress!...
+
+局分不對:延長賽不可能有X的情況!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error20" classname="org.example.BaseBallGameTest" time="0.001">
+    <system-out><![CDATA[Process in progress!...
+
+局分不對:延長賽不可能有X的情況!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error21" classname="org.example.BaseBallGameTest" time="0.002">
+    <system-out><![CDATA[Process in progress!...
+
+不合理的延長賽:第9局已經分出勝負!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error22" classname="org.example.BaseBallGameTest" time="0.001">
+    <system-out><![CDATA[Process in progress!...
+
+不合理的延長賽:第9局已經分出勝負!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error23" classname="org.example.BaseBallGameTest" time="0.001">
+    <system-out><![CDATA[Process in progress!...
+
+總分不對:不可能有平手的情況!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error24" classname="org.example.BaseBallGameTest" time="0.001">
+    <system-out><![CDATA[Process in progress!...
+
+2隊人數都不對:比賽成員各只能有9個!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error25" classname="org.example.BaseBallGameTest" time="0">
+    <system-out><![CDATA[Process in progress!...
+
+局數不對:不是9局就是10局，兩邊局數要一樣!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score_error26" classname="org.example.BaseBallGameTest" time="0.004">
+    <system-out><![CDATA[Process in progress!...
+
+不合理的延長延長賽:第10局已經分出勝負!
+]]></system-out>
+  </testcase>
+  <testcase name="check_score1_true1" classname="org.example.BaseBallGameTest" time="0.001">
+    <system-out><![CDATA[Process in progress!...
+
+後攻者贏了 1分
+]]></system-out>
+  </testcase>
+  <testcase name="check_score1_true2" classname="org.example.BaseBallGameTest" time="0.001">
+    <system-out><![CDATA[Process in progress!...
+
+前攻者贏了 1分
+]]></system-out>
+  </testcase>
+  <testcase name="check_score1_true3" classname="org.example.BaseBallGameTest" time="0.001">
+    <system-out><![CDATA[Process in progress!...
+
+後攻者贏了 1分
+]]></system-out>
+  </testcase>
+  <testcase name="check_score1_true4" classname="org.example.BaseBallGameTest" time="0">
+    <system-out><![CDATA[Process in progress!...
+
+前攻者贏了 1分
+]]></system-out>
+  </testcase>
+  <testcase name="check_score1_true5" classname="org.example.BaseBallGameTest" time="0.001">
+    <system-out><![CDATA[Process in progress!...
+
+後攻者贏了 1分
+]]></system-out>
+  </testcase>
+</testsuite>

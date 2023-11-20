@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BaseBallGame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">HW3</a> &gt; <a href="index.source.html" class="el_package">org.example</a> &gt; <span class="el_source">BaseBallGame.java</span></div><h1>BaseBallGame.java</h1><pre class="source lang-java linenums">package org.example;
+
+import java.util.Objects;
+
+public class BaseBallGame {
+    String[] inningA;
+    String[] inningB;
+    int[] playerA;
+    int[] playerB;
+<span class="fc" id="L10">    int score1 = 0;</span>
+<span class="fc" id="L11">    int score2 = 0;</span>
+<span class="fc" id="L12">    int score3 = 0;</span>
+<span class="fc" id="L13">    int score4 = 0;</span>
+
+    //局數、隊員建構子
+<span class="fc" id="L16">    public BaseBallGame(String[] inningA, String[] inningB, int[] playerA, int[] playerB) {</span>
+<span class="fc" id="L17">        this.inningA = inningA;</span>
+<span class="fc" id="L18">        this.inningB = inningB;</span>
+<span class="fc" id="L19">        this.playerA = playerA;</span>
+<span class="fc" id="L20">        this.playerB = playerB;</span>
+<span class="fc" id="L21">    }</span>
+
+    public int check_score() throws Exception
+    {
+<span class="fc" id="L25">        this.score1 = 0;</span>
+<span class="fc" id="L26">        this.score2 = 0;</span>
+<span class="fc" id="L27">        this.score3 = 0;</span>
+<span class="fc" id="L28">        this.score4 = 0;</span>
+
+        // 一、先測局分
+        // 至少會有9筆比賽資料
+<span class="fc bfc" id="L32" title="All 2 branches covered.">        if (this.inningA.length &lt; 9)</span>
+        {
+<span class="fc" id="L34">            throw new ArithmeticException(&quot;局數不對:至少打9局!&quot;);</span>
+        }
+        //至少會有9筆比賽資料，後攻者可能會有第9局為X的情況
+<span class="fc bfc" id="L37" title="All 2 branches covered.">        else if (this.inningB.length &lt; 9)</span>
+        {
+<span class="fc" id="L39">            throw new ArithmeticException(&quot;局數不對:至少打9局!&quot;);</span>
+        }
+        //正常賽：若是兩隊只比到9局的情況
+<span class="fc bfc" id="L42" title="All 4 branches covered.">        else if(this.inningA.length == this.inningB.length &amp;&amp; this.inningA.length == 9)</span>
+        {
+            //先計算兩隊各局各局分是否正確，然後加起來
+<span class="fc bfc" id="L45" title="All 2 branches covered.">            for (String s : this.inningA) {</span>
+                //因為是前攻者，所以不可能有沒比第9局的情況
+<span class="fc bfc" id="L47" title="All 2 branches covered.">                if (Objects.equals(s, &quot;X&quot;)) {</span>
+<span class="fc" id="L48">                    throw new ArithmeticException(&quot;局分不對:前攻者不可能有X的情況!&quot;);</span>
+                }
+                //如果遇到負數分的情況
+<span class="fc bfc" id="L51" title="All 2 branches covered.">                else if (Integer.parseInt(s) &lt; 0)</span>
+                {
+<span class="fc" id="L53">                    throw new ArithmeticException(&quot;局分不對:不可能有負數分數!&quot;);</span>
+                }
+<span class="fc" id="L55">                this.score1 += Integer.parseInt(s);</span>
+            }
+<span class="fc bfc" id="L57" title="All 2 branches covered.">            for (String s : this.inningB) {</span>
+                //因為是後攻者，所以可能會有沒比第9局的情況
+<span class="fc bfc" id="L59" title="All 2 branches covered.">                if (Objects.equals(s, &quot;X&quot;)) {</span>
+<span class="fc" id="L60">                    break;</span>
+                }
+                //如果遇到負數分的情況
+<span class="fc bfc" id="L63" title="All 2 branches covered.">                else if (Integer.parseInt(s) &lt; 0)</span>
+                {
+<span class="fc" id="L65">                    throw new ArithmeticException(&quot;局分不對:不可能有負數分數!&quot;);</span>
+                }
+<span class="fc" id="L67">                this.score2 += Integer.parseInt(s);</span>
+            }
+            //若是後攻者第九局為X，但又總分輸給前攻者
+<span class="fc bfc" id="L70" title="All 4 branches covered.">            if(Objects.equals(this.inningB[8], &quot;X&quot;) &amp;&amp; this.score1 &gt;= this.score2) {</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">                if(this.score1 == this.score2)</span>
+                {
+<span class="fc" id="L73">                    throw new ArithmeticException(&quot;總分不對:不可能有平手的情況!&quot;);</span>
+                }
+                else {
+<span class="fc" id="L76">                    throw new ArithmeticException(&quot;不合理的提前結束:不合理的提前結束後攻者只打到8下，不可能輸給前攻者!&quot;);</span>
+                }
+            }
+<span class="fc bfc" id="L79" title="All 2 branches covered.">            else if (!Objects.equals(this.inningB[8], &quot;X&quot;))</span>
+            {
+<span class="fc bfc" id="L81" title="All 2 branches covered.">                if(this.score1 &lt; this.score2 - Integer.parseInt(this.inningB[8]))</span>
+                {
+<span class="fc" id="L83">                    throw new ArithmeticException(&quot;不合理的第9局:後攻者在第8局已經贏過前攻者的9局!&quot;);</span>
+                }
+            }
+        }
+        //延長賽：若是兩隊都比10局以上 (因為前面的情況，所以剩下的只會是長度為10的陣列)
+<span class="fc bfc" id="L88" title="All 2 branches covered.">        else if(this.inningA.length == this.inningB.length)</span>
+        {
+            //先計算兩隊至第9局的各局分是否正確，然後加起來
+<span class="fc bfc" id="L91" title="All 2 branches covered.">            for (int i = 0; i &lt; 9; i++) {</span>
+                //因為是延長賽，所以不可能會有X的情況
+<span class="fc bfc" id="L93" title="All 2 branches covered.">                if (Objects.equals(this.inningA[i], &quot;X&quot;)) {</span>
+<span class="fc" id="L94">                    throw new ArithmeticException(&quot;局分不對:延長賽不可能有X的情況!&quot;);</span>
+                }
+                //如果遇到負數分的情況
+<span class="fc bfc" id="L97" title="All 2 branches covered.">                else if (Integer.parseInt(this.inningA[i]) &lt; 0)</span>
+                {
+<span class="fc" id="L99">                    throw new ArithmeticException(&quot;局分不對:不可能有負數分數!&quot;);</span>
+                }
+<span class="fc" id="L101">                this.score1 += Integer.parseInt(this.inningA[i]);</span>
+            }
+<span class="fc bfc" id="L103" title="All 2 branches covered.">            for (int i = 0; i &lt; 9; i++) {</span>
+                //因為是延長賽，所以不可能會有X的情況
+<span class="fc bfc" id="L105" title="All 2 branches covered.">                if (Objects.equals(this.inningB[i], &quot;X&quot;)) {</span>
+<span class="fc" id="L106">                    throw new ArithmeticException(&quot;局分不對:延長賽不可能有X的情況!&quot;);</span>
+                }
+                //如果遇到負數分的情況
+<span class="fc bfc" id="L109" title="All 2 branches covered.">                else if (Integer.parseInt(this.inningB[i]) &lt; 0)</span>
+                {
+<span class="fc" id="L111">                    throw new ArithmeticException(&quot;局分不對:不可能有負數分數!&quot;);</span>
+                }
+<span class="fc" id="L113">                this.score2 += Integer.parseInt(this.inningB[i]);</span>
+            }
+            //兩隊到第9局的總分不相同時
+<span class="fc bfc" id="L116" title="All 2 branches covered.">            if(this.score1 != this.score2)</span>
+            {
+<span class="fc" id="L118">                throw new ArithmeticException(&quot;不合理的延長賽:第9局已經分出勝負!&quot;);</span>
+            }
+            //第9局結束為平手，則繼續比延長賽
+            else {
+//                throw new ArithmeticException(&quot;總分不對:不可能有平手的情況!&quot;);
+<span class="fc bfc" id="L123" title="All 2 branches covered.">                for(int i = 9; i &lt; this.inningA.length; i++)</span>
+                {
+<span class="fc" id="L125">                    this.score1 += Integer.parseInt(this.inningA[i]);</span>
+<span class="fc" id="L126">                    this.score2 += Integer.parseInt(this.inningB[i]);</span>
+<span class="fc bfc" id="L127" title="All 4 branches covered.">                    if(this.score1 != this.score2 &amp;&amp; i != this.inningA.length-1)</span>
+                    {
+<span class="fc" id="L129">                        String ex = &quot;不合理的延長延長賽:第&quot; + (i+1) + &quot;局已經分出勝負!&quot;;</span>
+<span class="fc" id="L130">                        throw new ArithmeticException(ex);</span>
+                    }
+                }
+<span class="fc bfc" id="L133" title="All 2 branches covered.">                if (this.score1 == this.score2)</span>
+                {
+<span class="fc" id="L135">                    throw new ArithmeticException(&quot;總分不對:不可能有平手的情況!&quot;);</span>
+                }
+            }
+        }
+        else {
+<span class="fc" id="L140">            throw new ArithmeticException(&quot;局數不對:不是9局就是10局，兩邊局數要一樣!&quot;);</span>
+        }
+
+
+        // 二、測隊員得分
+        // 先看人數合不合理
+<span class="fc bfc" id="L146" title="All 4 branches covered.">        if (this.playerA.length != 9 || this.playerB.length != 9) {</span>
+<span class="fc bfc" id="L147" title="All 4 branches covered.">            if(this.playerA.length != 9 &amp;&amp; this.playerB.length == 9)</span>
+            {
+<span class="fc" id="L149">                throw new ArithmeticException(&quot;前攻者人數不對:比賽成員只能有9個!&quot;);</span>
+            }
+<span class="fc bfc" id="L151" title="All 2 branches covered.">            else if(this.playerA.length == 9)</span>
+            {
+<span class="fc" id="L153">                throw new ArithmeticException(&quot;後攻者人數不對:比賽成員只能有9個!&quot;);</span>
+            }
+            else
+            {
+<span class="fc" id="L157">                throw new ArithmeticException(&quot;2隊人數都不對:比賽成員各只能有9個!&quot;);</span>
+            }
+        }
+        //人物合理的話，計算分數
+        else
+        {
+            //判斷分數是否都&gt;=0
+<span class="fc bfc" id="L164" title="All 2 branches covered.">            for (int i = 0; i &lt; this.playerA.length; i++) {</span>
+                // 判斷是否會有小於0的狀況
+<span class="fc bfc" id="L166" title="All 4 branches covered.">                if (this.playerA[i] &lt; 0 || this.playerB[i] &lt; 0) {</span>
+<span class="fc" id="L167">                    throw new ArithmeticException(&quot;成員分數不對:不可能有負數分的情況!&quot;);</span>
+                }
+<span class="fc" id="L169">                this.score3 += playerA[i];</span>
+<span class="fc" id="L170">                this.score4 += playerB[i];</span>
+            }
+        }
+
+        // 三、判斷總局分是否和各成員分一致
+<span class="fc bfc" id="L175" title="All 2 branches covered.">        if(this.score1 != this.score3)</span>
+        {
+<span class="fc" id="L177">            throw new ArithmeticException(&quot;前攻隊總分不一致!&quot;);</span>
+        }
+<span class="fc bfc" id="L179" title="All 2 branches covered.">        if(this.score2 != this.score4)</span>
+        {
+<span class="fc" id="L181">            throw new ArithmeticException(&quot;後攻隊總分不一致!&quot;);</span>
+        }
+
+        // 四、回傳值
+<span class="fc bfc" id="L185" title="All 2 branches covered.">        if(this.score1 &gt; this.score2)</span>
+        {
+<span class="fc" id="L187">            System.out.printf(&quot;前攻者贏了 %d分\n&quot;, this.score1 - this.score2);</span>
+        }
+        else
+        {
+<span class="fc" id="L191">            System.out.printf(&quot;後攻者贏了 %d分\n&quot;, this.score2 - this.score1);</span>
+        }
+<span class="fc" id="L193">        return this.score1 - this.score2;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
